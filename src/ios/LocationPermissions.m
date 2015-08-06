@@ -1,17 +1,17 @@
 //
-//      Permissions.m
-//      Permissions Cordova Plugin
+//      LocationPermissions.m
+//      LocationPermissions Cordova Plugin
 //
 //      Copyright 2015 Emmanuel Tabard. All rights reserved.
 //      MIT Licensed
 //
 
-#import "Permissions.h"
+#import "LocationPermissions.h"
 #import <Cordova/CDVJSON.h>
 
-@implementation Permissions
+@implementation LocationPermissions
 
-- (void)getLocationStatus:(CDVInvokedUrlCommand*)command {
+- (void)getStatus:(CDVInvokedUrlCommand*)command {
     [self _handleCallSafely:^CDVPluginResult *(CDVInvokedUrlCommand *command) {
         
         CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];

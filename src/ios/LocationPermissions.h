@@ -12,11 +12,11 @@
 
 typedef CDVPluginResult* (^CDVPluginCommandHandler)(CDVInvokedUrlCommand*);
 
-@interface Permissions : CDVPlugin{
+@interface LocationPermissions : CDVPlugin{
 	
 }
 
-- (void)getLocationStatus:(CDVInvokedUrlCommand *)command;
+- (void)getStatus:(CDVInvokedUrlCommand *)command;
 - (void)openSettings:(CDVInvokedUrlCommand *)command;
 
 @end

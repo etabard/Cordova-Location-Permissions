@@ -1,8 +1,8 @@
 {
     "version": "1.0.0",
-    "name": "com.lesfrancschatons.cordova.plugins.permissions",
-    "cordova_name": "Permissions",
-    "description": "Checks user permissions on IOS",
+    "name": "com.lesfrancschatons.cordova.plugins.locationpermissions",
+    "cordova_name": "Location Permissions",
+    "description": "Checks location permissions on IOS",
     "license": "MIT",
     "keywords": [
         "ios"

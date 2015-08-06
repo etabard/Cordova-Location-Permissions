@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.lesfrancschatons.cordova.plugins.permissions"
+        id="com.lesfrancschatons.cordova.plugins.locationpermissions"
         version="1.0.0">
 
-    <name>Permissions</name>
+    <name>Location Permissions</name>
 
-    <description>Checks user permissions on IOS</description>
-    <keywords>ios</keywords>
+    <description>Checks location permissions on IOS</description>
+    <keywords>ios,permissions,location</keywords>
     <license>MIT</license>
 
     <author>Emmanuel Tabard</author>
@@ -20,18 +20,23 @@
 
     <!-- ios -->
     <platform name="ios">
-        <js-module src="www/ios/Permissions.js" name="Permissions">
-            <clobbers target="cordova.plugins.Permissions" />
+        <js-module src="www/ios/LocationPermissions.js" name="LocationPermissions">
+            <clobbers target="cordova.plugins.LocationPermissions" />
         </js-module>
 
         <config-file target="config.xml" parent="/*">
-    		<feature name="Permissions">
-    			<param name="ios-package" value="Permissions"/>
+    		<feature name="LocationPermissions">
+    			<param name="ios-package" value="LocationPermissions"/>
     		</feature>
         </config-file>
 
-    	<header-file src="src/ios/Permissions.h" />
-    	<source-file src="src/ios/Permissions.m" />
+    	<header-file src="src/ios/LocationPermissions.h" />
+    	<source-file src="src/ios/LocationPermissions.m" />
+        <framework src="CoreLocation.framework" />
+        
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string></string>
+        </config-file>
     </platform>
 
 </plugin>

@@ -12,7 +12,6 @@ var exec = require('cordova/exec');
 var LocationStatus = (function(resp) {
 	var status = resp.authorizationStatus;
 	
-
 	this.allowed = false;
 	this.restricted = false;
 	this.always = false;
@@ -39,17 +38,17 @@ function Permissions() {
    
 }
 
-Permissions.prototype.getLocationStatus = function(cb, error) {
+Permissions.prototype.getStatus = function(cb, error) {
 	var callback = function (status) {
 		var LS = new LocationStatus(status);
 		cb(LS);
 	};
 
-    exec(cb && callback, error && error, 'Permissions', 'getLocationStatus', []);
+    exec(cb && callback, error && error, 'LocationPermissions', 'getStatus', []);
 };
 
 Permissions.prototype.openSettings = function(cb, error) {
-	exec(cb && cb, error && error, 'Permissions', 'openSettings', []);
+	exec(cb && cb, error && error, 'LocationPermissions', 'openSettings', []);
 };
 
 module.exports = new Permissions();

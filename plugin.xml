@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.lesfrancschatons.cordova.plugins.permissions"
+        version="1.0.0">
+
+    <name>Permissions</name>
+
+    <description>Checks user permissions on IOS</description>
+    <keywords>ios</keywords>
+    <license>MIT</license>
+
+    <author>Emmanuel Tabard</author>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/ios/Permissions.js" name="Permissions">
+            <clobbers target="cordova.plugins.Permissions" />
+        </js-module>
+
+        <config-file target="config.xml" parent="/*">
+    		<feature name="Permissions">
+    			<param name="ios-package" value="Permissions"/>
+    		</feature>
+        </config-file>
+
+    	<header-file src="src/ios/Permissions.h" />
+    	<source-file src="src/ios/Permissions.m" />
+    </platform>
+
+</plugin>
